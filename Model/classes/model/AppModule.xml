@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  ComponentClass="model.AppModuleImpl"
+  DefClass="model.AppModuleDefImpl"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_isDefCodegen" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="Stvari"
+    ViewObjectName="model.Stvari"/>
+  <ViewUsage
+    Name="Tipovi1"
+    ViewObjectName="model.Tipovi"/>
+  <ViewUsage
+    Name="Tipovi2"
+    ViewObjectName="model.Tipovi"/>
+  <ViewUsage
+    Name="Stvari1"
+    ViewObjectName="model.Stvari"/>
+  <ViewUsage
+    Name="Stvari2"
+    ViewObjectName="model.Stvari"/>
+  <ViewLinkUsage
+    Name="TipoviStvariVL"
+    ViewLinkObjectName="model.TipoviStvariVL"
+    SrcViewUsageName="model.AppModule.Stvari"
+    DstViewUsageName="model.AppModule.Tipovi1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StvariTipoviVL"
+    ViewLinkObjectName="model.StvariTipoviVL"
+    SrcViewUsageName="model.AppModule.Tipovi2"
+    DstViewUsageName="model.AppModule.Stvari1"
+    Reversed="false"/>
+</AppModule>

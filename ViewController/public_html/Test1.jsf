@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <af:document title="Test1.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:listView value="#{bindings.Stvari.collectionModel}" var="item"
+                         emptyText="#{bindings.Stvari.viewable ? 'No data to display.' : 'Access Denied.'}"
+                         fetchSize="#{bindings.Stvari.rangeSize}" id="lv2">
+                <af:listItem id="li2">
+                    <af:panelGridLayout id="pgl2">
+                        <af:gridRow id="gr1" rendered="#{!TestBean['tipFk']}">
+                            <af:gridCell id="gc1" width="25%" inlineStyle="background-color:ThreeDShadow;"
+                                         halign="stretch" valign="stretch">
+                                <h:outputText value="#{item.bindings.tipFk.inputValue}" id="ot2"/>
+                            </af:gridCell>
+                            <af:gridCell id="gc2" width="25%" inlineStyle="background-color:ThreeDShadow;"
+                                         halign="stretch" valign="stretch">
+                                <af:spacer width="10" height="10" id="s1"/>
+                            </af:gridCell>
+                            <af:gridCell id="gc3" width="25%" inlineStyle="background-color:ThreeDShadow;"
+                                         halign="stretch" valign="stretch">
+                                <af:spacer width="10" height="10" id="s2"/>
+                            </af:gridCell>
+                            <af:gridCell id="gc8" width="25%" inlineStyle="background-color:ThreeDShadow;"
+                                         halign="stretch" valign="stretch">
+                                <af:spacer width="10" height="10" id="s3"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="gr2">
+                            <af:gridCell marginStart="5px" width="25%" id="gc4">
+                                <af:outputFormatted value="#{item.bindings.id.inputValue}" id="of4">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Stvari.hints.id.format}"/>
+                                </af:outputFormatted>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="25%" id="gc5">
+                                <af:outputFormatted value="#{item.bindings.tipFk.inputValue}" id="of5">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.Stvari.hints.tipFk.format}"/>
+                                </af:outputFormatted>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="25%" id="gc6">
+                                <af:outputFormatted value="#{item.bindings.Naziv.inputValue}" id="of6"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc7">
+                                <h:outputText id="ot1" value="#{!TestBean['tipFk']}"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:listItem>
+            </af:listView>
+        </af:form>
+    </af:document>
+</f:view>
